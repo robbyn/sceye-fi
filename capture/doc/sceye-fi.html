@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://code.google.com/archive/p/sceye-fi/ -->
+<html class="google ng-scope" lang="en" ng-app="codesiteArchive.application"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+
+    <!-- https://developers.google.com/webmasters/ajax-crawling/docs/specification -->
+    <meta name="fragment" content="!">
+    <title>Google Code Archive - Long-term storage for Google Code Project Hosting.</title>
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://code.google.com/archive/img/project-hosting.ico">
+    <script src="./sceye-fi_files/google.js"></script>
+    <link href="./sceye-fi_files/maia.css" rel="stylesheet">
+    <link href="./sceye-fi_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./sceye-fi_files/archive_css.css">
+    <script>
+      CLOSURE_NO_DEPS = true;
+    </script>
+    <script src="./sceye-fi_files/angular.js"></script><style type="text/css">@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-shim {
+  visibility:hidden;
+}
+
+.ng-anchor {
+  position:absolute;
+}
+</style>
+    <script src="./sceye-fi_files/pagedown.js"></script>
+    <script src="./sceye-fi_files/archive.js"></script>
+    <!--<base href="/archive/">--><base href=".">
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+  <body>
+    <div class="maia-header" id="maia-header" role="banner">
+      <div class="maia-aux">
+        <a href="https://code.google.com/archive/">
+          </a><h1><a href="https://code.google.com/archive/">
+            <img alt="Google" src="./sceye-fi_files/googlelogo_color_116x41dp.png"> Code</a>
+          </h1>
+        
+        <a href="https://code.google.com/archive/">
+          <h2>
+            Archive
+          </h2>
+        </a>
+        <a class="maia-teleport" href="https://code.google.com/archive/#content">Skip to content</a>
+        <div class="maia-util">
+          <form action="https://code.google.com/archive/search" class="maia-search ng-pristine ng-valid">
+            <input name="q" placeholder="Search this site" type="text">
+            <button class="maia-button">
+              <span class="maia-search-icon">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngView:  --><div ng-view="" class="ng-scope"><div ng-controller="ProjectHomepageCtrl as projectCtrl" class="ng-scope">
+<nav-bar-widget nav-level-1="projectCtrl.navLevel1" class="ng-isolate-scope"><div class="maia-nav maia-complex" id="maia-nav-x" role="navigation">
+  <div class="maia-aux">
+    <ul>
+      <li ng-class="{active: navLevel1 == &#39;projects&#39;}" class="active">
+        <a href="https://code.google.com/archive/">Projects</a>
+        <!-- ngIf: navLevel2 -->
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;search&#39;}">
+        <a href="https://code.google.com/archive/search">Search</a>
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;about&#39;}">
+        <a href="https://code.google.com/archive/about">About</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav-bar-widget>
+<div id="maia-main" role="main">
+
+  <!-- Left-side resource nav -->
+  <span ng-hide="projectCtrl.project.notFound">
+    <project-resources-widget domain="projectCtrl.domain" project="projectCtrl.projectName" class="ng-isolate-scope"><div class="maia-nav" id="maia-nav-y" role="navigation">
+  <!-- ngIf: domain == 'code.google.com' --><ul ng-if="domain == &#39;code.google.com&#39;" class="ng-scope">
+    <li class="active">
+      <a href="https://code.google.com/archive/p/sceye-fi/">Project</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/source">Source</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/issues">Issues</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/wikis">Wikis</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/downloads">Downloads</a>
+    </li>
+  </ul><!-- end ngIf: domain == 'code.google.com' -->
+
+    <!-- ngIf: domain != 'code.google.com' -->
+</div></project-resources-widget>
+  </span>
+
+  <div class="maia-article" role="article">
+    <div class="maia-teleport" id="content"></div>
+    <div class="maia-cols">
+
+      <!-- BUG: We show "no issues" and relaged sub-pages for projects that
+           do not exist. Similarly, if you go to page 1,000,000 it says the
+           project has no issues, despite page 999,999 existing. -->
+      <!-- ngIf: projectCtrl.project.notFound -->
+
+      <div ng-hide="projectCtrl.project.notFound" id="gca-project-header" class="maia-col-10">
+        <img class="gca-project-logo" src="./sceye-fi_files/logo.png">
+        <h1 class="ng-binding">sceye-fi</h1>
+      </div>
+
+      <div ng-hide="projectCtrl.project.notFound" class="maia-col-10">
+        <hr>
+
+        <!-- ngIf: projectCtrl.error -->
+
+        <!-- Switch by project resource -->
+        <!-- ngIf: !projectCtrl.error --><div ng-if="!projectCtrl.error" ng-switch="projectCtrl.resource" class="ng-scope">
+
+          <!-- Project -->
+          <!-- ngSwitchWhen: project --><div ng-switch-when="project" class="ng-scope">
+            <!-- ngIf: projectCtrl.project == null -->
+
+            <!-- ngIf: projectCtrl.project.notFound -->
+
+            <!-- ngIf: projectCtrl.project.found --><div ng-if="projectCtrl.project.found" class="ng-scope">
+              <div class="maia-col-6">
+                <p class="maia-meta ng-binding">A server for Eye-Fi cards written in Java</p>
+                <markdown-widget text="projectCtrl.project.description" class="markdown"><h1>Sceye-Fi</h1>
+
+<h2>Introduction</h2>
+
+<p>The software that comes with <a href="http://www.eye.fi/">Eye-Fi</a> card doesn't suit the needs of all users (there is no Linux version for instance).</p>
+
+<p>The goal I had in my mind when I started to write this program was to integrate it in my event-photography software; but it can be used independently.</p>
+
+<h2>Requirements</h2>
+
+<p>Sceye-Fi requires a JRE or JDK 1.6+ to run.
+It's a Netbeans project, but it can be built with Ant 1.7+</p>
+
+<h2>Running Sceye-Fi</h2>
+
+<p>The server can be started with the following command:</p>
+
+<p><code>
+java -jar sceye-fi.jar [&lt;configuration-file&gt;]
+</code></p>
+
+<p>A configuration file may optionally be specified, otherwise, it will search for one in the default location:</p>
+
+<ul>
+<li><strong>user-home</strong><code>/Application Data/Eye-Fi/Settings.xml</code>, or</li>
+<li><strong>user-home</strong><code>/Library/Eye-Fi/Settings.xml</code></li>
+</ul>
+
+<h2>Logging</h2>
+
+<p>To see what Sceye-Fi is doing, you can supply a logging.properties file on the command line:</p>
+
+<p><code>
+java -Djava.util.logging.config.file=logging.properties -jar sceye-fi.jar
+</code></p>
+
+<p>Here is an example of a logging.properties file:</p>
+
+<p>```
+handlers = java.util.logging.ConsoleHandler</p>
+
+<p>.level = WARNING</p>
+
+<p>java.util.logging.ConsoleHandler.level = ALL
+java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatter</p>
+
+<p>org.tastefuljava.sceyefi.level = FINE
+```</p>
+
+<h2>Documentation</h2>
+
+<p>You will find documentation about</p>
+
+<ul>
+<li>Configuring Sceye-Fi <a href="http://code.google.com/p/sceye-fi/wiki/Configuration">here</a></li>
+<li>Embedding Sceye-Fi in your application <a href="http://code.google.com/p/sceye-fi/wiki/Embedding">here</a></li>
+<li>The upload protocol <a href="http://code.google.com/p/sceye-fi/wiki/UploadProtocol">here</a></li>
+</ul>
+
+<h2>Related projects</h2>
+
+<p>I have benefited from the experience of other persons that have reversed-engineered the Eye-Fi protocol for their own projects.
+Here is a list of related projects:</p>
+
+<ul>
+<li><a href="http://code.google.com/p/eyefiserver/">http://code.google.com/p/eyefiserver/</a></li>
+<li><a href="http://code.google.com/p/eyefidroid/">http://code.google.com/p/eyefidroid/</a></li>
+<li><a href="http://code.google.com/p/eyefi-config/">http://code.google.com/p/eyefi-config/</a> <a href="http://sr71.net/projects/eyefi/">http://sr71.net/projects/eyefi/</a></li>
+<li><a href="https://github.com/kristofg/rifec">https://github.com/kristofg/rifec</a></li>
+<li><a href="https://github.com/tachang/EyeFiServer">https://github.com/tachang/EyeFiServer</a></li>
+</ul>
+
+<p><a href="http://dave-hansen.blogspot.com/">Dave Hansen's blog</a> also contains a lot of useful information.</p>
+
+<p>Also, if you're into open-source hardware, check out these cool projects:</p>
+
+<ul>
+<li><a href="http://code.google.com/p/partybooth/">http://code.google.com/p/partybooth/</a></li>
+<li><a href="http://www.photoduino.com/">http://www.photoduino.com/</a></li>
+</ul></markdown-widget>
+              </div>
+              <div id="gca-project-info-box" class="maia-col-4">
+                <div class="maia-aside">
+                  <h1>Project Information</h1>
+                  <!-- ngIf: projectCtrl.project.creationTime --><p ng-if="projectCtrl.project.creationTime" class="ng-binding ng-scope">
+                    The project was created on May 4, 2011.
+                  </p><!-- end ngIf: projectCtrl.project.creationTime -->
+                  <!-- ngIf: projectCtrl.project.ancestorRepo -->
+                  <ul>
+                    <li>
+                      License: <a href="http://www.gnu.org/licenses/gpl.html" class="ng-binding">
+                        GNU GPL v3</a>
+                    </li>
+                    <!-- ngIf: projectCtrl.project.contentLicenseName -->
+                    <!-- ngIf: projectCtrl.project.stars --><li ng-if="projectCtrl.project.stars" class="ng-binding ng-scope">
+                      15 stars
+                    </li><!-- end ngIf: projectCtrl.project.stars -->
+                    <li class="ng-binding">svn-based source control</li>
+                  </ul>
+                  <!-- ngIf: projectCtrl.project.labels.length > 0 --><p ng-if="projectCtrl.project.labels.length &gt; 0" class="ng-scope">
+                    Labels:
+                    <br>
+                    <!-- ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Application"><span class="gca-label ng-binding">Application</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Communication"><span class="gca-label ng-binding">Communication</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:HTTP"><span class="gca-label ng-binding">HTTP</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Images"><span class="gca-label ng-binding">Images</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:j2se"><span class="gca-label ng-binding">j2se</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Java"><span class="gca-label ng-binding">Java</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Photography"><span class="gca-label ng-binding">Photography</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Eye-Fi"><span class="gca-label ng-binding">Eye-Fi</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:WiFi"><span class="gca-label ng-binding">WiFi</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:EyeFi"><span class="gca-label ng-binding">EyeFi</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Linux"><span class="gca-label ng-binding">Linux</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Mac"><span class="gca-label ng-binding">Mac</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index --><span ng-repeat="label in projectCtrl.project.labels track by $index" class="ng-scope">
+                      <a href="https://code.google.com/archive/search?q=domain:code.google.com%20label:Windows"><span class="gca-label ng-binding">Windows</span></a>
+                    </span><!-- end ngRepeat: label in projectCtrl.project.labels track by $index -->
+                  </p><!-- end ngIf: projectCtrl.project.labels.length > 0 -->
+                </div>
+              </div>
+            </div><!-- end ngIf: projectCtrl.project.found -->
+          </div><!-- end ngSwitchWhen: -->
+
+          <!-- Source -->
+          <!-- ngSwitchWhen: source -->
+
+          <!-- Issues -->
+          <!-- ngSwitchWhen: issues -->
+
+          <!-- Wikis -->
+          <!-- ngSwitchWhen: wikis -->
+
+          <!-- Downloads -->
+          <!-- ngSwitchWhen: downloads -->
+
+          <!-- Default -->
+          <!-- ngSwitchDefault:  -->
+
+        <!-- end Switch -->
+        </div><!-- end ngIf: !projectCtrl.error -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+    <div id="maia-signature"></div>
+    <div class="maia-footer" id="maia-footer">
+      <div id="maia-footer-local">
+      </div>
+      <div id="maia-footer-global">
+        <div class="maia-aux">
+          <ul>
+            <li>
+              <a href="https://www.google.com/">Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/about/">About Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./sceye-fi_files/maia.js"></script>
+  
+
+</body></html>

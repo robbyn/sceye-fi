@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://code.google.com/archive/p/sceye-fi/wikis/UploadProtocol.wiki -->
+<html class="google ng-scope" lang="en" ng-app="codesiteArchive.application"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+
+    <!-- https://developers.google.com/webmasters/ajax-crawling/docs/specification -->
+    <meta name="fragment" content="!">
+    <title>Google Code Archive - Long-term storage for Google Code Project Hosting.</title>
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://code.google.com/archive/img/project-hosting.ico">
+    <script src="./UploadProtocol_files/google.js"></script>
+    <link href="./UploadProtocol_files/maia.css" rel="stylesheet">
+    <link href="./UploadProtocol_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./UploadProtocol_files/archive_css.css">
+    <script>
+      CLOSURE_NO_DEPS = true;
+    </script>
+    <script src="./UploadProtocol_files/angular.js"></script><style type="text/css">@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-shim {
+  visibility:hidden;
+}
+
+.ng-anchor {
+  position:absolute;
+}
+</style>
+    <script src="./UploadProtocol_files/pagedown.js"></script>
+    <script src="./UploadProtocol_files/archive.js"></script>
+    <!--<base href="/archive/">--><base href=".">
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+  <body>
+    <div class="maia-header" id="maia-header" role="banner">
+      <div class="maia-aux">
+        <a href="https://code.google.com/archive/">
+          </a><h1><a href="https://code.google.com/archive/">
+            <img alt="Google" src="./UploadProtocol_files/googlelogo_color_116x41dp.png"> Code</a>
+          </h1>
+        
+        <a href="https://code.google.com/archive/">
+          <h2>
+            Archive
+          </h2>
+        </a>
+        <a class="maia-teleport" href="https://code.google.com/archive/#content">Skip to content</a>
+        <div class="maia-util">
+          <form action="https://code.google.com/archive/search" class="maia-search ng-pristine ng-valid">
+            <input name="q" placeholder="Search this site" type="text">
+            <button class="maia-button">
+              <span class="maia-search-icon">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngView:  --><div ng-view="" class="ng-scope"><div ng-controller="ProjectWikiCtrl as wikiCtrl" class="ng-scope">
+<nav-bar-widget nav-level-1="wikiCtrl.navLevel1" class="ng-isolate-scope"><div class="maia-nav maia-complex" id="maia-nav-x" role="navigation">
+  <div class="maia-aux">
+    <ul>
+      <li ng-class="{active: navLevel1 == &#39;projects&#39;}" class="active">
+        <a href="https://code.google.com/archive/">Projects</a>
+        <!-- ngIf: navLevel2 -->
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;search&#39;}">
+        <a href="https://code.google.com/archive/search">Search</a>
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;about&#39;}">
+        <a href="https://code.google.com/archive/about">About</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav-bar-widget>
+<div id="maia-main" role="main">
+
+  <!-- ngIf: wikiCtrl.notFound -->
+
+  <div ng-hide="wikiCtrl.notFound">
+    <!-- Left-side resource nav -->
+    <project-resources-widget domain="wikiCtrl.domain" project="wikiCtrl.projectName" class="ng-isolate-scope"><div class="maia-nav" id="maia-nav-y" role="navigation">
+  <!-- ngIf: domain == 'code.google.com' --><ul ng-if="domain == &#39;code.google.com&#39;" class="ng-scope">
+    <li class="active">
+      <a href="https://code.google.com/archive/p/sceye-fi/">Project</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/source">Source</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/issues">Issues</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/wikis">Wikis</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/downloads">Downloads</a>
+    </li>
+  </ul><!-- end ngIf: domain == 'code.google.com' -->
+
+    <!-- ngIf: domain != 'code.google.com' -->
+</div></project-resources-widget>
+
+    <div class="maia-article" role="article">
+      <div class="maia-teleport" id="content"></div>
+      <div class="maia-cols">
+        <div id="gca-project-header" class="maia-col-10">
+          <a id="gca-export-to-gh" class="maia-button" href="https://code.google.com/export-to-github/export?project=sceye-fi">Export to GitHub</a>
+          <img class="gca-project-logo" src="./UploadProtocol_files/logo.png">
+          <h1 class="ng-binding">sceye-fi - UploadProtocol.wiki</h1>
+        </div>
+
+        <!-- ngIf: wikiCtrl.error -->
+
+        <!-- ngIf: !wikiCtrl.error --><div ng-if="!wikiCtrl.error" class="maia-col-10 ng-scope">
+          <hr>
+
+          <markdown-widget text="wikiCtrl.wikiContents" class="markdown"><h1>Upload protocol</h1>
+
+<p>I will summarize here my understanding of the protocol that the Eye-Fi cards are using to upload images to the server. This information is incomplete because it was mainly obtained by reverse-engineering.</p>
+
+<p>The protocol is based on SOAP/HTTP. The commands are sent by the Eye-Fi card as HTTP POSTs on the port 59278 of the server. The address of the server is given to the Eye-Fi card during configuration, by the Eye-Fi Manager. The path is either <code>/api/soap/eyefilm/v1</code> for plain XML (SOAP) messages, or <code>/api/soap/eyefilm/v1/upload</code> when a file is attached. In the latter case, a multipart content is sent.</p>
+
+<p>When the Eye-Fi card wants to send an image to the server, it first sends a <strong>StartSession</strong> command, then a <strong>GetPhotoStatus</strong>, then an <strong>UploadPhoto</strong>, and finally, a <strong>MarkLastPhotoInRoll</strong>.</p>
+
+<h2>StartSession</h2>
+
+<p>The purpose of the <strong>StartSession</strong> command is to let the Eye-Fi card and the server authenticate each other, and to negociate the transfer mode.</p>
+
+<p>Here is an example of a <strong>StartSession</strong> message sent by an Eye-Fi card:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:StartSession&gt;
+      &lt;macaddress&gt;001856417729&lt;/macaddress&gt;
+      &lt;cnonce&gt;8744904b7ea202439631c67186690a1e&lt;/cnonce&gt;
+      &lt;transfermode&gt;2&lt;/transfermode&gt;
+      &lt;transfermodetimestamp&gt;1304505230&lt;/transfermodetimestamp&gt;
+    &lt;/ns1:StartSession&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<ul>
+<li><strong>macaddress</strong> identifies the Eye-Fi card. The server will search in it's registry an Eye-Fi card with that MAC address. The registry contains all the information needed to continue the dialog. The upload key for instance.</li>
+<li><strong>cnonce</strong> is a random array of bytes that the Eye-Fi card has generated, and that is used by the authentication mechanism, as we will see below.</li>
+<li>I don't know what <strong>transfermode</strong> and <strong>transfermodetimestamp</strong> are, Sceye-Fi simply sends back the same values to the Eye-Fi card.</li>
+</ul>
+
+<p>The server will respond to such a message with a <strong>StartSessionResponse</strong>:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:StartSessionResponse xmlns:ns1="http://localhost/api/soap/eyefilm"&gt;
+      &lt;credential&gt;0d400f69ce6096c3771f9465c6123145&lt;/credential&gt;
+      &lt;snonce&gt;d5b2b8dd7a681cfb5320aaac2fd9bba4&lt;/snonce&gt;
+      &lt;transfermode&gt;2&lt;/transfermode&gt;
+      &lt;transfermodetimestamp&gt;1304505230&lt;/transfermodetimestamp&gt;
+      &lt;upsyncallowed&gt;false&lt;/upsyncallowed&gt;
+    &lt;/ns1:StartSessionResponse&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<ul>
+<li><strong>credential</strong> is the MD5 digest of <strong>macaddress</strong>, <strong>cnonce</strong>, and the upload key. It is used by the Eye-Fi card to authenticate the server.</li>
+<li><strong>snonce</strong> is a random array of bytes that the server has generated, and that is used by the authentication mechanism, as we will see below.</li>
+<li><strong>transfermode</strong> and <strong>transfermodetimestamp</strong> are copied from the request.</li>
+<li>I don't know what <strong>upsyncallowed</strong> is, Sceye-Fi always set it to <code>false</code>.</li>
+</ul>
+
+<h2>GetPhotoStatus</h2>
+
+<p>Before the Eye-Fi card starts the actual upload, it sens a <strong>GetPhotoStatus</strong> request:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:GetPhotoStatus&gt;
+      &lt;credential&gt;2d7b2e9f6755a1a51152a32a2d4e98a6&lt;/credential&gt;
+      &lt;macaddress&gt;001856417729&lt;/macaddress&gt;
+      &lt;filename&gt;P1030007.JPG.tar&lt;/filename&gt;
+      &lt;filesize&gt;1269760&lt;/filesize&gt;
+      &lt;filesignature&gt;343afd9e4e84d3d4f5969cd97214f7f2&lt;/filesignature&gt;
+      &lt;flags&gt;4&lt;/flags&gt;
+    &lt;/ns1:GetPhotoStatus&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<ul>
+<li><strong>credential</strong> this time, it's the Eye-Fi card that is sending a credential, so that the server can authentify it. It's the MD5 digest of <strong>macaddress</strong>, the upload key, and the <strong>snonce</strong> that was sent by the server in its respond to the <strong>StartSession</strong> command.</li>
+<li><strong>macaddress</strong> is the card's MAC address of the Eye-Fi card</li>
+<li><strong>filename</strong> is the name of the file that the card wants to send. Note that it is a TAR file.</li>
+<li><strong>filesize</strong> is the size of that file</li>
+<li>I don't know what the <strong>filesignature</strong> and the <strong>flags</strong> are. Sceye-Fi ignores them.</li>
+</ul>
+
+<p>The server will respond with a <strong>GetPhotoStatusResponse</strong> message:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:GetPhotoStatusResponse xmlns:ns1="http://localhost/api/soap/eyefilm"&gt;
+      &lt;fileid&gt;1&lt;/fileid&gt;
+      &lt;offset&gt;0&lt;/offset&gt;
+    &lt;/ns1:GetPhotoStatusResponse&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<ul>
+<li><strong>fileid</strong> is a unique number for the file about to be send. It will be repeated by the Eye-Fi card in the forthcoming <strong>UploadPhoto</strong> message.</li>
+<li>I don't know what <strong>offset</strong> means, but I guess it's a way for the server to resume an upload that was aborted. Sceye-Fi is always sending a value of 0 though, which means that if an upload is aborted, the whole file must be resent.</li>
+</ul>
+
+<h2>UploadPhoto</h2>
+
+<p>The actual file content is sent by the Eye-Fi card in a multipart POST on path <code>/api/soap/eyefilm/v1/upload</code>. The first part, named <code>SOAPENVELOPE</code> contains the SOAP envelope for the command; the second part, named <code>FILENAME</code> contains the actual file content, and the third and last part, named <code>INTEGRITYDIGEST</code> is a 16-byte hash that can be used to check the file's integrity.</p>
+
+<p>A soap envelope looks like this:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:UploadPhoto&gt;
+      &lt;fileid&gt;1&lt;/fileid&gt;
+      &lt;macaddress&gt;001856417729&lt;/macaddress&gt;
+      &lt;filename&gt;P1030007.JPG.tar&lt;/filename&gt;
+      &lt;filesize&gt;1269760&lt;/filesize&gt;
+      &lt;filesignature&gt;c8340300c434030000000000dced0300&lt;/filesignature&gt;
+      &lt;encryption&gt;none&lt;/encryption&gt;
+      &lt;flags&gt;4&lt;/flags&gt;
+    &lt;/ns1:UploadPhoto&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<ul>
+<li><strong>macaddress</strong> is the card's MAC address of the Eye-Fi card</li>
+<li><strong>filename</strong> is the name of the file</li>
+<li><strong>filesize</strong> is the size of that file</li>
+<li>I don't know what the <strong>filesignature</strong>, the <strong>encryption</strong> and the <strong>flags</strong> are, Sceye-Fi ignores them.</li>
+</ul>
+
+<p>The server will respond with a <strong>UploadPhotoResponse</strong> message:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:UploadPhotoResponse xmlns:ns1="http://localhost/api/soap/eyefilm"&gt;
+      &lt;success&gt;true&lt;/success&gt;
+    &lt;/ns1:UploadPhotoResponse&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<h3>Integrity check</h3>
+
+<p>The third part, <code>INTEGRITYDIGEST</code> contains an hexadecimal-encoded hash code that is the MD5 digest of the TCP checksums of each 512-byte block in the file content, followed by the upload key. The file being a TAR file, it is always 512-bytes padded.</p>
+
+<p>The TCP checksum of a block is computed as follows:</p>
+
+<ul>
+<li>the block is treated as an array of 256 16-bit unsigned integers, low-order byte first (little endian), and all these integers are added into a 32-bit sum.</li>
+<li>if the 32-bit sum is greater that 65535 (2^16-1), add the high-order and low-order 16-bit words, and repeat the process while the result is greater than 65535.</li>
+<li>take the complement to 1 of the result (invert all bits).</li>
+</ul>
+
+<h2>MarkLastPhotoInRoll</h2>
+
+<p>The Eye-Fi card may upload several files in parallel. When everything is done, it sends a <strong>MarkLastPhotoInRoll</strong> command:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:MarkLastPhotoInRoll&gt;
+      &lt;macaddress&gt;001856417729&lt;/macaddress&gt;
+      &lt;mergedelta&gt;0&lt;/mergedelta&gt;
+    &lt;/ns1:MarkLastPhotoInRoll&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p>
+
+<ul>
+<li><strong>macaddress</strong> as always, the MAC address of the Eye-Fi card</li>
+<li>I don't know what the <strong>mergedelta</strong> is.</li>
+</ul>
+
+<p>To which the server responds with a <strong>MarkLastPhotoInRollResponse</strong> message:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:MarkLastPhotoInRollResponse xmlns:ns1="http://localhost/api/soap/eyefilm" /&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></p></markdown-widget>
+        </div><!-- end ngIf: !wikiCtrl.error -->
+      </div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+    <div id="maia-signature"></div>
+    <div class="maia-footer" id="maia-footer">
+      <div id="maia-footer-local">
+      </div>
+      <div id="maia-footer-global">
+        <div class="maia-aux">
+          <ul>
+            <li>
+              <a href="https://www.google.com/">Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/about/">About Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./UploadProtocol_files/maia.js"></script>
+  
+
+</body></html>

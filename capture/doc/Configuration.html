@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://code.google.com/archive/p/sceye-fi/wikis/Configuration.wiki -->
+<html class="google ng-scope" lang="en" ng-app="codesiteArchive.application"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+
+    <!-- https://developers.google.com/webmasters/ajax-crawling/docs/specification -->
+    <meta name="fragment" content="!">
+    <title>Google Code Archive - Long-term storage for Google Code Project Hosting.</title>
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://code.google.com/archive/img/project-hosting.ico">
+    <script src="./Configuration_files/google.js"></script>
+    <link href="./Configuration_files/maia.css" rel="stylesheet">
+    <link href="./Configuration_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./Configuration_files/archive_css.css">
+    <script>
+      CLOSURE_NO_DEPS = true;
+    </script>
+    <script src="./Configuration_files/angular.js"></script><style type="text/css">@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-shim {
+  visibility:hidden;
+}
+
+.ng-anchor {
+  position:absolute;
+}
+</style>
+    <script src="./Configuration_files/pagedown.js"></script>
+    <script src="./Configuration_files/archive.js"></script>
+    <!--<base href="/archive/">--><base href=".">
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+  <body>
+    <div class="maia-header" id="maia-header" role="banner">
+      <div class="maia-aux">
+        <a href="https://code.google.com/archive/">
+          </a><h1><a href="https://code.google.com/archive/">
+            <img alt="Google" src="./Configuration_files/googlelogo_color_116x41dp.png"> Code</a>
+          </h1>
+        
+        <a href="https://code.google.com/archive/">
+          <h2>
+            Archive
+          </h2>
+        </a>
+        <a class="maia-teleport" href="https://code.google.com/archive/#content">Skip to content</a>
+        <div class="maia-util">
+          <form action="https://code.google.com/archive/search" class="maia-search ng-pristine ng-valid">
+            <input name="q" placeholder="Search this site" type="text">
+            <button class="maia-button">
+              <span class="maia-search-icon">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngView:  --><div ng-view="" class="ng-scope"><div ng-controller="ProjectWikiCtrl as wikiCtrl" class="ng-scope">
+<nav-bar-widget nav-level-1="wikiCtrl.navLevel1" class="ng-isolate-scope"><div class="maia-nav maia-complex" id="maia-nav-x" role="navigation">
+  <div class="maia-aux">
+    <ul>
+      <li ng-class="{active: navLevel1 == &#39;projects&#39;}" class="active">
+        <a href="https://code.google.com/archive/">Projects</a>
+        <!-- ngIf: navLevel2 -->
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;search&#39;}">
+        <a href="https://code.google.com/archive/search">Search</a>
+      </li>
+      <li ng-class="{active: navLevel1 == &#39;about&#39;}">
+        <a href="https://code.google.com/archive/about">About</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav-bar-widget>
+<div id="maia-main" role="main">
+
+  <!-- ngIf: wikiCtrl.notFound -->
+
+  <div ng-hide="wikiCtrl.notFound">
+    <!-- Left-side resource nav -->
+    <project-resources-widget domain="wikiCtrl.domain" project="wikiCtrl.projectName" class="ng-isolate-scope"><div class="maia-nav" id="maia-nav-y" role="navigation">
+  <!-- ngIf: domain == 'code.google.com' --><ul ng-if="domain == &#39;code.google.com&#39;" class="ng-scope">
+    <li class="active">
+      <a href="https://code.google.com/archive/p/sceye-fi/">Project</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/source">Source</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/issues">Issues</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/wikis">Wikis</a>
+    </li>
+    <li>
+      <a href="https://code.google.com/archive/p/sceye-fi/downloads">Downloads</a>
+    </li>
+  </ul><!-- end ngIf: domain == 'code.google.com' -->
+
+    <!-- ngIf: domain != 'code.google.com' -->
+</div></project-resources-widget>
+
+    <div class="maia-article" role="article">
+      <div class="maia-teleport" id="content"></div>
+      <div class="maia-cols">
+        <div id="gca-project-header" class="maia-col-10">
+          <a id="gca-export-to-gh" class="maia-button" href="https://code.google.com/export-to-github/export?project=sceye-fi">Export to GitHub</a>
+          <img class="gca-project-logo" src="./Configuration_files/logo.png">
+          <h1 class="ng-binding">sceye-fi - Configuration.wiki</h1>
+        </div>
+
+        <!-- ngIf: wikiCtrl.error -->
+
+        <!-- ngIf: !wikiCtrl.error --><div ng-if="!wikiCtrl.error" class="maia-col-10 ng-scope">
+          <hr>
+
+          <markdown-widget text="wikiCtrl.wikiContents" class="markdown"><h1>Configuration</h1>
+
+<p>This program doesn't deal with the configuration of the card. If your running Windows or Mac OS X, you can use the tools provided by Eye-Fi. If you are running Linux, you may want to use <a href="http://code.google.com/p/eyefi-config/">eyefi-config</a> the tools created by Dave Hansen.</p>
+
+<p>The program needs an XML files such as those generated by the Eye-Fi Manager. Here is an example of such a file:</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt;
+&lt;Config version="2.0"&gt;
+    &lt;ShowThumbnailPreview&gt;true&lt;/ShowThumbnailPreview&gt;
+    &lt;MIB&gt;
+        &lt;ReceivedCounter&gt;0&lt;/ReceivedCounter&gt;
+    &lt;/MIB&gt;
+    &lt;Cards&gt;
+        &lt;Card MacAddress="00-18-56-41-77-29"&gt;
+            &lt;UploadKey&gt;0d6ec517a597ec130b64e77c9b57f40e&lt;/UploadKey&gt;
+            &lt;DownsyncKey&gt;693db4cdaa431bb3b1132dfe89c60755&lt;/DownsyncKey&gt;
+            &lt;TransferMode&gt;2&lt;/TransferMode&gt;
+            &lt;TransferModeTimestamp&gt;1304088542&lt;/TransferModeTimestamp&gt;
+            &lt;MediaTypes&gt;
+                &lt;Media Type="1"&gt;
+                    &lt;Folder&gt;/Users/maurice/Pictures/Eye-Fi&lt;/Folder&gt;
+                    &lt;AddDate&gt;1&lt;/AddDate&gt;
+                    &lt;DateType&gt;1&lt;/DateType&gt;
+                    &lt;CustomDateFormat&gt;&lt;/CustomDateFormat&gt;
+                &lt;/Media&gt;
+                &lt;Media Type="2"&gt;
+                    &lt;Folder&gt;/Users/maurice/Movies/Eye-Fi&lt;/Folder&gt;
+                    &lt;AddDate&gt;1&lt;/AddDate&gt;
+                    &lt;DateType&gt;0&lt;/DateType&gt;
+                    &lt;CustomDateFormat&gt;&lt;/CustomDateFormat&gt;
+                &lt;/Media&gt;
+                &lt;Media Type="4"&gt;
+                    &lt;Folder&gt;/Users/maurice/Pictures/Eye-Fi/Raw&lt;/Folder&gt;
+                    &lt;AddDate&gt;1&lt;/AddDate&gt;
+                    &lt;DateType&gt;1&lt;/DateType&gt;
+                    &lt;CustomDateFormat&gt;&lt;/CustomDateFormat&gt;
+                &lt;/Media&gt;
+            &lt;/MediaTypes&gt;
+        &lt;/Card&gt;
+    &lt;/Cards&gt;
+&lt;/Config&gt;
+</code></p>
+
+<p>The configuration file can be passed as a command-line argument to sceye-fi; if no argument is passed, it tries to open:</p>
+
+<ul>
+<li><strong>user-home</strong><code>/Application Data/Eye-Fi/Settings.xml</code></li>
+<li><strong>user-home</strong><code>/Library/Eye-Fi/Settings.xml</code></li>
+</ul>
+
+<p>These are the files that the Eye-Fi Manager creates respectively on Windows, and on Mac.</p>
+
+<p>The <code>UploadKey</code> is an important piece of information: it's a secret shared between an Eye-Fi card and the server. They use it to authenticate one another.</p>
+
+<p>I have identified three types of media so far:</p>
+
+<ul>
+<li>Photos (Type 1)</li>
+<li>Movies (Type 2)</li>
+<li>Raw photos (Type 4)</li>
+</ul>
+
+<p>They relate to the Photos, RAW, Video tabs in the Eye-Fi Center application, in the Eye-Fi card settings.</p></markdown-widget>
+        </div><!-- end ngIf: !wikiCtrl.error -->
+      </div>
+    </div>
+  </div>
+</div>
+</div></div>
+
+    <div id="maia-signature"></div>
+    <div class="maia-footer" id="maia-footer">
+      <div id="maia-footer-local">
+      </div>
+      <div id="maia-footer-global">
+        <div class="maia-aux">
+          <ul>
+            <li>
+              <a href="https://www.google.com/">Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/about/">About Google</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./Configuration_files/maia.js"></script>
+  
+
+</body></html>
